@@ -1,28 +1,42 @@
-class Book:
-    def init(self, title, author, price):
-        self.title = title
-        self.author = author
-        self.price = price
+class Vehicle:
+    def init(self, brand, year):
+        self.brand = brand
+        self.year = year
 
-    def display_details(self):
-        print(f"عنوان: {self.title}, نویسنده: {self.author}, قیمت: {self.price} تومان")
-
-    def apply_discount(self, discount_percent):
-        discount_amount = (self.price * discount_percent) / 100
-        self.price -= discount_amount
+    def display_info(self):
+        print(f"برند: {self.brand}")
+        print(f"سال ساخت: {self.year}")
 
 
+class Car(Vehicle):
+    def init(self, brand, year, num_doors):
+        super().init(brand, year) 
+        self.num_doors = num_doors
 
-book1 = Book("ملت عشق", "الیف شافاک", 200000)
-book2 = Book("قلعه حیوانات", "جورج اورول", 150000)
+    def display_info(self):
+        super().display_info()  
+        print(f"تعداد درها: {self.num_doors}")
 
-print("اطلاعات قبل از تخفیف:")
-book1.display_details()
-book2.display_details()
 
-book1.apply_discount(10)  
-book2.apply_discount(20)  
+class Motorcycle(Vehicle):
+    def init(self, brand, year, has_sidecar):
+        super().init(brand, year)
+        self.has_sidecar = has_sidecar
 
-print("\nاطلاعات بعد از تخفیف:")
-book1.display_details()
-book2.display_details()
+    def display_info(self):
+        super().display_info()
+        print(f"دارای سایدکار: {'بله' if self.has_sidecar else 'خیر'}")
+
+
+v1 = Vehicle("Toyota", 2020)
+c1 = Car("BMW", 2022, 4)
+m1 = Motorcycle("Yamaha", 2021, False)
+
+print("---- Vehicle ----")
+v1.display_info()
+
+print("\n---- Car ----")
+c1.display_info()
+
+print("\n---- Motorcycle ----")
+m1.display_info()
