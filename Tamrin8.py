@@ -20,27 +20,21 @@ def calculate_share():
             "خطا",
             "لطفاً مبلغ و تعداد نفرات را به صورت عددی و صحیح وارد کنید."
         )
-
-# ساخت پنجره اصلی
 root = tk.Tk()
 root.title("محاسبه سهم هر نفر")
 root.geometry("300x200")
 
-# برچسب و ورودی مبلغ کل
 label_bill = tk.Label(root, text="مبلغ کل صورتحساب:")
 label_bill.pack(pady=5)
 
 entry_bill = tk.Entry(root)
 entry_bill.pack(pady=5)
 
-# برچسب و ورودی تعداد نفرات
 label_people = tk.Label(root, text="تعداد نفرات:")
 label_people.pack(pady=5)
 
 entry_people = tk.Entry(root)
 entry_people.pack(pady=5)
-
-# دکمه محاسبه
 btn_calculate = tk.Button(
     root,
     text="محاسبه سهم هر نفر",
