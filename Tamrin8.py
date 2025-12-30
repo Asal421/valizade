@@ -41,6 +41,4 @@ btn_calculate = tk.Button(
     command=calculate_share
 )
 btn_calculate.pack(pady=15)
-
-# اجرای برنامه
 root.mainloop()
